@@ -9,10 +9,7 @@ export default function Home({ posts, title, content }) {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1>{title}</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          className={styles.container}
-        />
+        <div dangerouslySetInnerHTML={{ __html: content }} />
         <ul>
           {posts.map(({ title, slug, date }) => (
             <li key={slug} style={{ marginBottom: '10px' }}>
