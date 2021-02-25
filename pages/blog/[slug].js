@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { client } from '../../lib/apollo'
 
@@ -7,13 +8,16 @@ import styles from '../../styles/Home.module.css'
 
 export default function Blog({ post }) {
   return (
-    <main className={styles.main}>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      <Link href="/">
-        <a>&larr; Back to Home</a>
-      </Link>
-    </main>
+    <>
+      <Head></Head>
+      <main className={styles.main}>
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <Link href="/">
+          <a>&larr; Back to Home</a>
+        </Link>
+      </main>
+    </>
   )
 }
 
