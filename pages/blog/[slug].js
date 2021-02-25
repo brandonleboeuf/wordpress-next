@@ -9,7 +9,6 @@ import styles from '../../styles/Home.module.css'
 export default function Blog({ post }) {
   return (
     <>
-      <Head></Head>
       <main className={styles.main}>
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />

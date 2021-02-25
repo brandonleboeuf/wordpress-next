@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from '@apollo/client'
 
@@ -8,44 +7,12 @@ import styles from '../styles/Home.module.css'
 export default function Home({ posts, title, content }) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>WordPress blog </title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          id="admin-bar-css"
-          href="http://54.218.121.170/wp-includes/css/admin-bar.min.css?ver=5.6.2"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="wp-block-library-css"
-          href="http://54.218.121.170/wp-includes/css/dist/block-library/style.min.css?ver=5.6.2"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="wp-block-library-theme-css"
-          href="http://54.218.121.170/wp-includes/css/dist/block-library/theme.min.css?ver=5.6.2"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="twenty-twenty-one-style-css"
-          href="http://54.218.121.170/wp-content/themes/twentytwentyone/style.css?ver=1.0"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="twenty-twenty-one-print-style-css"
-          href="http://54.218.121.170/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.0"
-          media="print"
-        />
-      </Head>
-
       <main className={styles.main}>
         <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: content }}
+          className={styles.container}
+        />
         <ul>
           {posts.map(({ title, slug, date }) => (
             <li key={slug} style={{ marginBottom: '10px' }}>
