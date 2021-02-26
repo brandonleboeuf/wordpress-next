@@ -13,7 +13,7 @@ export default function Blog({ post }) {
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
         <Link href="/">
-          <a>&larr; Back to Home</a>
+          <a style={{ fontWeight: 'bold' }}>&larr; Back to Home</a>
         </Link>
       </main>
     </>

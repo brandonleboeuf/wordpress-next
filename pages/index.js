@@ -15,7 +15,8 @@ export default function Home({ posts, title, content }) {
             <li key={slug} style={{ marginBottom: '10px' }}>
               <Link href={`/blog/${slug}`}>
                 <a>
-                  {date} | {title}
+                  {new Date(date).toLocaleDateString()} |{' '}
+                  <span style={{ fontWeight: 'bold' }}>{title}</span>
                 </a>
               </Link>
             </li>
